@@ -1,0 +1,396 @@
+$clrMain: #D44D5C
+$clrText: rgb(54,58, 64)
+$clrBg: #eee
+$clrSection: #fff
+$clrActiveLink: #051e3e
+$clrNavText: #fff
+
+$clrOverlay: linear-gradient($clrMain, $clrActiveLink)
+// rgb(54,58, 64)
+
+*
+  box-sizing: border-box
+  font-family: 'Montserrat', sans-serif
+
+body
+  font-size: 16px
+  padding: 0
+  margin: 0
+a
+  color: $clrText
+
+  &:hover
+    color: $clrMain
+main
+  color: $clrText
+.app-nav
+  position: relative
+  z-index: 10
+  background-color: $clrActiveLink
+  min-height: 100%
+  height: 100%
+
+  .nav
+    padding: 0px
+
+  .nav-link
+    width: 100%
+    color: #fff
+
+    &:hover
+      background-color: $clrMain
+
+  .nav-item.nav-link.active
+    background-color: $clrMain
+.header
+  background-color: $clrMain
+  .form-control
+    display: inline-block
+    width: auto
+  .fas, .fab
+    color: #fff
+  .fab
+    &:hover
+      color: $clrActiveLink !important
+
+.App
+  min-height: 100vh
+  background-color: $clrBg
+
+div.row
+  margin: 0
+.grid
+  display: grid
+  // grid-template-areas: 'main main sidebar'
+  grid-template-columns: 70% 30%
+  justify-content: space-around
+  align-items: flex-start
+  .main
+    height: 100%
+    .sub-section
+      height: 100%
+    // grid-area: main
+  .sidebar
+    // grid-area: sidebar
+    margin-left: 10px
+  .relative
+    position: relative
+
+.grid-feed
+  display: grid
+  grid-template-columns: minmax(auto, 50%) minmax(auto, 50%)
+  align-content: flex-start
+  grid-gap: 10px
+
+  .item
+
+    &-img-container
+
+
+.feed
+  .item
+    color: $clrText
+    background-color: $clrSection
+    &-header
+      text-align: center
+      text-transform: uppercase
+    &-btn
+      border: none
+      border-radius: 0%
+      background-color: $clrMain
+      color: #fff
+      &:hover
+        background-color: darken($clrMain, 20%)
+
+    .nav-link
+      color: #fff
+      transition: .3s ease
+      background-color: transparentize($clrActiveLink, 0.1)
+      border: 3px solid transparent
+
+      .fab
+        display: inline-block
+        width: 100%
+        height: 100%
+
+      &:hover
+        transform: scale(1.1)
+
+.page-link
+  color: $clrText
+  &:hover
+    color: $clrText
+.page-item.active
+  background-color: $clrMain
+  .page-link
+    background-color: $clrMain
+    border-color: $clrMain
+
+.item-img
+  width: auto
+  max-width: 100%
+.sidebar,
+.feed
+  section
+    background-color: $clrSection
+    color: $clrText
+    padding: 1em
+
+    &:not(:first-of-type)
+      margin-top: 10px
+
+.item-img-link
+  position: relative
+  display: inline-block
+  width: 100%
+  .item-img-container
+    overflow: hidden
+  img
+    display: inline-block
+    width: 100% !important
+    position: relative
+    transition: .2s ease
+  &__content
+    position: absolute
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 1000
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: left
+
+
+    .hidden
+      position: relative
+      top: 35px
+      transition: .3s ease
+      opacity: 0
+
+      .header
+        text-transform: capitalize
+
+  .overlay
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    opacity: 0
+    background: $clrOverlay
+    transition: .3s ease
+
+  .hidden
+    color: #fff
+  &:hover
+    img
+      transform: scale(1.2)
+    .overlay
+      opacity: 0.9
+    .hidden
+      top: 0px
+      opacity: 1
+.nav-item.nav-link
+  text-transform: uppercase
+.nav-item.nav-link.active
+  background-color: $clrActiveLink
+  color: $clrBg
+#nav
+  background-color: $clrMain
+
+  .navbar-toggler
+    color: $clrNavText
+  .nav-link
+    text-transform: uppercase
+    color: $clrNavText
+    position: relative
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      bottom: 0
+      left: calc(50%)
+      height: 3px
+      width: 0%
+      transition: .2s ease
+      background-color: $clrNavText
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      bottom: 0
+      right: calc(50%)
+      height: 3px
+      width: 0%
+      background-color: $clrNavText
+      transition: .2s ease
+
+    &:hover
+      &:after
+        width: 50%
+      &:before
+        width: 50%
+.blogs
+  img
+    max-width: 100%
+
+  .stats, .date
+    font-size: 1.2rem
+
+.author
+
+.profile
+  .user-avatar
+
+    img
+      border-radius: 50%
+      width: 300px
+      height: 300px
+.nav-holder
+  height: 100%
+
+  .nav
+    height: 100%
+    .nav-link
+      transition: .3s ease
+    .logout-btn
+      margin-top: auto
+
+.post
+  background-color: #fff
+  color: $clrText
+  &__header
+    text-align: center
+  &__text
+    text-align: justify
+    text-indent: 15px
+  &__img
+    max-width: 100%
+    display: block
+.comment
+  position: relative
+  .avatar
+    img
+      width: 100px
+      height: 100px
+      border-radius: 50%
+  .controls
+    position: absolute
+    right: 0
+    top: 0
+
+    button
+      // background-color: $clrMain
+      border: none
+      color: #fff
+      cursor: pointer
+      padding: 5px 10px
+.comment-form
+  img
+    border-radius: 50%
+    width: 100px
+    height: 100px
+
+.nav-link__active
+  background-color: $clrActiveLink
+
+.fade-enter
+  opacity: 0.01
+  position: absolute
+  z-index: 2
+  width: 100%
+
+
+.fade-enter.fade-enter-active
+  opacity: 1
+  transition: opacity 300ms ease-in
+
+
+.fade-exit
+  position: relative
+  left: 0
+  top: 0
+  opacity: 1
+  z-index: 1
+
+.fade-exit.fade-exit-active
+  opacity: 0.01
+  transition: 300ms ease-in
+
+
+.admin
+  display: grid
+  grid-template-columns: 150px auto
+
+  .nav
+    .nav-item
+      margin-top: 5px
+    .nav-link
+      border-right: 3px solid $clrActiveLink
+      transition: .3s ease
+
+    .nav-link.active
+      color: #fff
+      background-color: $clrActiveLink
+
+
+
+.test-grid
+  display: flex
+
+  .sidenav
+    display: flex
+    overflow: hidden
+    padding: 0
+    background-color: red
+    max-width: 0
+    transition: 1s ease
+
+  .sidenav.active
+    max-width: 100%
+
+  .content
+    display: inline-block
+
+
+
+
+
+@media screen and (max-width: 576px)
+  .nav-left, .nav-right
+    display: flex
+    flex-direction: column
+    a
+      display: block
+
+
+@media screen and (max-width: 1000px)
+  .grid
+    // grid-template-areas: 'main' 'sidebar'
+    grid-template-columns: 100%
+    grid-gap: 10px
+    .sidebar
+      margin: 0
+    .grid-feed
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  .fade-enter
+    opacity: 0.01
+    position: relative
+
+  .fade-enter.fade-enter-active
+    opacity: 1
+    transition: opacity 300ms ease-in
+
+  .fade-exit
+    position: absolute
+    width: 100%
+
+    opacity: 1
+
+  .fade-exit.fade-exit-active
+    opacity: 0.01
+    transition: 300ms ease-in

@@ -1,0 +1,41 @@
+{
+	"name": "blog",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"bootstrap": "^4.1.3",
+		"cors": "^2.8.4",
+		"express": "^4.16.3",
+		"express-graphql": "^0.6.12",
+		"froala-editor": "^2.8.4",
+		"graphql": "^0.13.2",
+		"jquery": "^3.3.1",
+		"mysql": "^2.16.0",
+		"mysql2": "^1.5.3",
+		"nodemon": "^1.18.3",
+		"offcanvas": "^2.1.0",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1",
+		"react-froala-wysiwyg": "^2.8.4",
+		"react-offcanvas": "^0.3.1",
+		"react-redux": "^5.0.7",
+		"react-router": "^4.3.1",
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "1.1.4",
+		"react-scroll-to-component": "^1.0.2",
+		"reactstrap": "^6.3.0",
+		"redux": "^4.0.0",
+		"sharer.npm.js": "0.0.10",
+		"uuid": "^3.3.2"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject",
+		"watch": "sass --watch src/sass/index.sass src/css/index.css",
+		"dev:server": "nodemon server/index.js"
+	},
+	"proxy": "http://localhost:4000"
+}
